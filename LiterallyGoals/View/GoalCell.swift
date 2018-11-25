@@ -10,16 +10,19 @@ import UIKit
 
 class GoalCell: UITableViewCell {
     @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var completionView: UIView!
+    func configCell(goal: Goal){
+        self.goalLabel.text = "Goal: \(goal.goalDescription!)"
+        self.typeLabel.text = goal.goalType
+        self.myLabel.text = String(describing:goal.goalProgress)
+        
+        if goal.goalProgress == goal.goalCompletionValue{
+            self.completionView.isHidden = false
+        }else{
+            self.completionView.isHidden = true
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
