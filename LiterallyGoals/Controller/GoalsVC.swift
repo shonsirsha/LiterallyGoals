@@ -84,7 +84,7 @@ class GoalsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
                 tableView.reloadRows(at: [indexPath], with: .automatic)
             }
             
-            addAction.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+            addAction.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
             
             let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
                 self.removeGoal(indexPath: indexPath)
